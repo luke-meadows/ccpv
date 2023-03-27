@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextSection from '../global/TextSection';
 export default function ProductAndExplainersText() {
   return (
@@ -31,7 +32,9 @@ export default function ProductAndExplainersText() {
             of an eye.
           </p>
 
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

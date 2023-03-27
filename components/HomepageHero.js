@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import useWindowScroll from '@/lib/useWindowScroll';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Logo from '../public/logo/ccpv-logo-white.png';
+import Logo from './global/Logo';
+import MobileNav from './global/MobileNav';
 import ContactButton from './hero-buttons/ContactButton';
 import PlayShowreelButton from './hero-buttons/PlayShowreelButton';
 import ServicesNavDropdown from './ServicesNavDropdown';
@@ -14,6 +14,9 @@ export default function HomepageHero({
   button = 'contact',
 }) {
   const [servicesHovered, setServicesHovered] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const scrollPosition = useWindowScroll();
+
   const videoUrlCodes = {
     home: '807653156',
     sports: '807638507',
@@ -27,20 +30,17 @@ export default function HomepageHero({
 
   return (
     <StyledHero videoUrlCode={videoUrlCode}>
-      <div class="vimeo-wrapper">
+      <div className="vimeo-wrapper">
         <iframe
           src={`https://player.vimeo.com/video/${videoUrlCodes[videoUrlCode]}?background=1&autoplay=1&loop=1&byline=0&title=0muted=1`}
           frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          allowFullScreen
         ></iframe>
       </div>
-
-      <Header servicesHovered={servicesHovered}>
-        <Link href="/">
-          <Image src={Logo} width="160" />
-        </Link>
+      <Header servicesHovered={servicesHovered} scrollPosition={scrollPosition}>
+        <Logo variant="white" />
         <nav>
           <Link href="/">Home</Link>
           <Link href="/about-us">About Us</Link>
@@ -54,6 +54,12 @@ export default function HomepageHero({
           </div>
           <Link href="/contact">Contact Us</Link>
         </nav>
+        <div
+          className="mobile-nav-icon"
+          onClick={() => setShowMobileNav(!showMobileNav)}
+        >
+          <i className={showMobileNav ? 'icon-cancel' : 'icon-menu-1'} />
+        </div>
       </Header>
       <Title>
         <h1>{title}</h1>
@@ -61,7 +67,8 @@ export default function HomepageHero({
         {button === 'showreel' && <PlayShowreelButton />}
         {button === 'contact' && <ContactButton />}
       </Title>
-      <Overlay />
+      <div className="overlay" />
+      {showMobileNav && <MobileNav setShowMobileNav={setShowMobileNav} />}
     </StyledHero>
   );
 }
@@ -93,37 +100,21 @@ const StyledHero = styled.div`
     transform: translate(-50%, -50%);
     scale: ${(props) => (props.videoUrlCode === 'home' ? '1.5' : '1.1')};
   }
-`;
-
-const HeroVideo = styled.div`
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  position: relative;
-  iframe {
-    height: 100%;
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border: 0;
-    padding: 0;
+    background: #002b27;
+    z-index: 0;
+    opacity: 0.7;
   }
 `;
 
-const Overlay = styled.div`
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  background: #002b27;
-  z-index: 0;
-  opacity: 0.7;
-`;
-
 const Header = styled.header`
+  z-index: 3;
   position: absolute;
   top: 0;
   left: 0;
@@ -133,7 +124,6 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 8rem;
-  z-index: 2;
   nav {
     display: flex;
     align-items: center;
@@ -145,11 +135,45 @@ const Header = styled.header`
       }
     }
   }
+
   .services-link {
     position: relative;
     background: ${(props) => (props.servicesHovered ? 'var(--green)' : '')};
     a {
       background: ${(props) => (props.servicesHovered ? 'var(--green)' : '')};
+    }
+  }
+
+  .mobile-nav-icon {
+    display: none;
+    pointer-events: none;
+    border-radius: 2px;
+    background: var(--green);
+    justify-content: flex-end;
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 0 4rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    position: fixed;
+    padding: 0rem 1rem;
+    height: 5rem;
+    background: ${(props) => (props.scrollPosition > 10 ? 'black' : '')};
+    nav {
+      display: none;
+      pointer-events: none;
+    }
+    .mobile-nav-icon {
+      display: flex;
+      pointer-events: all;
+      i:hover {
+        color: white;
+      }
     }
   }
 `;
@@ -167,5 +191,19 @@ const Title = styled.div`
     max-width: 16ch;
     font-size: 2.8rem;
     font-weight: 600;
+  }
+  /* ipad */
+  @media only screen and (max-width: 1100px) {
+    left: 4rem;
+  }
+  /* phone */
+  @media only screen and (max-width: 600px) {
+    left: 1rem;
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
   }
 `;

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextSection from '../global/TextSection';
 export default function PhotographyText() {
   return (
@@ -24,8 +25,9 @@ export default function PhotographyText() {
             foundations of a relationship based on mutual trust between business
             and consumer.
           </p>
-
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

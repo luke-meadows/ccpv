@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Logo from '../../public/logo/ccpv-logo-black.png';
+import Logo from './Logo';
 export default function Footer() {
   return (
     <StyledFooter>
       <div className="inner-footer">
         <div className="upper-footer">
-          <Image src={Logo} width="160" />
+          <Logo />
           <div className="upper-footer-right">
             <nav>
               <Link href="/">Home</Link>
@@ -64,5 +64,18 @@ const StyledFooter = styled.footer`
     text-align: center;
     color: white;
     font-size: 0.8rem;
+  }
+  @media screen and (max-width: 1100px) {
+    .upper-footer {
+      padding: 2rem 2rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    nav {
+      display: none;
+    }
+    .upper-footer {
+      align-items: center;
+    }
   }
 `;

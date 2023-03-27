@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextSection from '../global/TextSection';
 export default function WeddingsText() {
   return (
@@ -40,7 +41,9 @@ export default function WeddingsText() {
             dance of the night - we won&apos;t miss a beat.
           </p>
 
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

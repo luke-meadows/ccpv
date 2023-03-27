@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import Link from 'next/link';
 import TextSection from './global/TextSection';
 export default function FindOutMoreWho() {
   return (
@@ -27,7 +27,9 @@ export default function FindOutMoreWho() {
             videography company that could truly capture the human element of
             the moments captured on film.
           </p>
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

@@ -22,22 +22,37 @@ export default function ServiceCard({ image, title, gif, orientation, link }) {
 }
 
 const Card = styled(Link)`
-  width: ${(props) => (props.orientation === 'vertical' ? '240px' : '400px')};
-  height: ${(props) => (props.orientation === 'vertical' ? '400px' : '240px')};
+  /* vars and media queries can be found in ServiceCards.js */
+  width: ${(props) =>
+    props.orientation === 'vertical'
+      ? 'var(--service-card-short-side)'
+      : 'var(--service-card-long-side)'};
+  height: ${(props) =>
+    props.orientation === 'vertical'
+      ? 'var(--service-card-long-side)'
+      : 'var(--service-card-short-side)'};
   min-width: ${(props) =>
-    props.orientation === 'vertical' ? '240px' : '400px'};
+    props.orientation === 'vertical'
+      ? 'var(--service-card-short-side)'
+      : 'var(--service-card-long-side)'};
   min-height: ${(props) =>
-    props.orientation === 'vertical' ? '400px' : '240px'};
+    props.orientation === 'vertical'
+      ? 'var(--service-card-long-side)'
+      : 'var(--service-card-short-side)'};
   max-width: ${(props) =>
-    props.orientation === 'vertical' ? '240px' : '400px'};
+    props.orientation === 'vertical'
+      ? 'var(--service-card-short-side)'
+      : 'var(--service-card-long-side)'};
   max-height: ${(props) =>
-    props.orientation === 'vertical' ? '400px' : '240px'};
+    props.orientation === 'vertical'
+      ? 'var(--service-card-long-side)'
+      : 'var(--service-card-short-side)'};
   color: white;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   scroll-snap-align: start;
-
+  border: none;
   cursor: pointer;
   img {
     object-fit: cover;
@@ -59,5 +74,36 @@ const Card = styled(Link)`
     text-transform: uppercase;
     font-weight: 600;
     max-width: 10ch;
+  }
+  @media only screen and (max-width: 1100px) {
+    width: ${(props) =>
+      props.orientation === 'vertical'
+        ? 'var(--service-card-short-side)'
+        : 'var(--service-card-long-side)'};
+    height: ${(props) =>
+      props.orientation === 'vertical'
+        ? 'var(--service-card-long-side)'
+        : 'var(--service-card-short-side)'};
+    min-width: ${(props) =>
+      props.orientation === 'vertical'
+        ? 'var(--service-card-short-side)'
+        : 'var(--service-card-long-side)'};
+    min-height: ${(props) =>
+      props.orientation === 'vertical'
+        ? 'var(--service-card-long-side)'
+        : 'var(--service-card-short-side)'};
+    max-width: ${(props) =>
+      props.orientation === 'vertical'
+        ? 'var(--service-card-short-side)'
+        : 'var(--service-card-long-side)'};
+    max-height: ${(props) =>
+      props.orientation === 'vertical'
+        ? 'var(--service-card-long-side)'
+        : 'var(--service-card-short-side)'};
+  }
+  @media screen and (max-width: 600px) {
+    .gif {
+      display: none;
+    }
   }
 `;

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextSection from '../global/TextSection';
 export default function VideographyText() {
   return (
@@ -30,7 +31,9 @@ export default function VideographyText() {
             vision to reality.
           </p>
 
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

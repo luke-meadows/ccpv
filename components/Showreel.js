@@ -1,23 +1,30 @@
+import Vimeo from '@u-wave/react-vimeo';
 import styled from 'styled-components';
+import Container from './global/Container';
 export default function Showreel() {
   return (
-    <StyledShowreel id="showreel">
-      <div className="showreel-text">
-        <div className="text-wrap">
-          <h3>
-            Showreel <span>{new Date().getFullYear()}</span>
-          </h3>
+    <Container>
+      <StyledShowreel id="showreel">
+        <div className="showreel-text">
+          <div className="text-wrap">
+            <h3>
+              Showreel <span>{new Date().getFullYear()}</span>
+            </h3>
+          </div>
         </div>
-      </div>
-      <div className="video"></div>
-    </StyledShowreel>
+        <div className="video">
+          <Vimeo video="174620220" volume={0} paused={true} responsive />
+          <span style={{ color: 'red' }}>
+            <br />
+            ** Need the vimeo Id number for actual showreel
+          </span>
+        </div>
+      </StyledShowreel>
+    </Container>
   );
 }
 
 const StyledShowreel = styled.div`
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 4rem 8rem 4rem 8rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -55,10 +62,59 @@ const StyledShowreel = styled.div`
       transform: translateY(-50%);
     }
   }
-
   .video {
     width: 100%;
-    height: 40rem;
-    border: 1px solid blue;
+    position: relative;
+    margin: auto;
+  }
+  iframe {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    h3 {
+      font-size: 3rem;
+      margin-top: 2.4rem;
+      margin-left: 0.6rem;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .showreel-text {
+      position: relative;
+      width: 100%;
+    }
+    .text-wrap {
+      position: initial;
+      left: 0px;
+      top: 0px;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    h3 {
+      font-size: 3rem;
+      margin-top: 0rem;
+      margin-left: 0rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      span {
+        font-size: 1.5rem;
+      }
+      span::after {
+        content: '';
+        width: 80%;
+        position: absolute;
+        right: 0px;
+        height: 1px;
+        background: #d7d7d7;
+        bottom: 20%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
   }
 `;

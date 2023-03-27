@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextSection from '../global/TextSection';
 export default function MusicVideographyText() {
   return (
@@ -35,7 +36,9 @@ export default function MusicVideographyText() {
             in the West Midlands to put you on the map, then look no further.
           </p>
 
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

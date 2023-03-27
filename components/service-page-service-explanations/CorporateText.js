@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextSection from '../global/TextSection';
 export default function CorporateText() {
   return (
@@ -30,8 +31,9 @@ export default function CorporateText() {
             the seemingly minute moments that would often be missed with a blink
             of an eye.
           </p>
-
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

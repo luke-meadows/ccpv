@@ -1,4 +1,3 @@
-import { Inter } from '@next/font/google';
 import HomepageHero from '@/components/HomepageHero';
 import Showreel from '@/components/Showreel';
 import FindOutMoreWho from '@/components/FindOutMoreWho';
