@@ -66,6 +66,8 @@ const Card = styled(Link)`
     margin-bottom: 0;
     padding-bottom: 0;
     z-index: -1;
+    border-radius: 10px;
+    overflow: hidden;
   }
   h3 {
     position: absolute;
