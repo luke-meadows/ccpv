@@ -87,6 +87,7 @@ body {
   font-family: 'Montserrat';
   --green: #009288;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -141,4 +142,15 @@ i:hover {
   html {
     color-scheme: dark;
   }
+}
+
+.code {
+  font-family: 'Anonymous Pro';
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgb(0, 115, 255);
+  background: rgb(46, 48, 67);
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 4rem;
 }

@@ -1,4 +1,5 @@
 import useWindowScroll from '@/lib/useWindowScroll';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -54,12 +55,14 @@ export default function HomepageHero({
           </div>
           <Link href="/contact">Contact Us</Link>
         </nav>
-        <div
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           className="mobile-nav-icon"
           onClick={() => setShowMobileNav(!showMobileNav)}
         >
           <i className={showMobileNav ? 'icon-cancel' : 'icon-menu-1'} />
-        </div>
+        </motion.div>
       </Header>
       <Title>
         <h1>{title}</h1>
@@ -68,7 +71,14 @@ export default function HomepageHero({
         {button === 'contact' && <ContactButton />}
       </Title>
       <div className="overlay" />
-      {showMobileNav && <MobileNav setShowMobileNav={setShowMobileNav} />}
+      <AnimatePresence>
+        {showMobileNav && (
+          <MobileNav
+            setShowMobileNav={setShowMobileNav}
+            showMobileNav={showMobileNav}
+          />
+        )}
+      </AnimatePresence>
     </StyledHero>
   );
 }
@@ -148,10 +158,10 @@ const Header = styled.header`
     display: none;
     pointer-events: none;
     border-radius: 2px;
-    background: var(--green);
+    /* background: var(--green); */
     justify-content: flex-end;
     i {
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
   }
 

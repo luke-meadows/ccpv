@@ -120,7 +120,7 @@ const StyledCards = styled.div`
   h2 {
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   p {

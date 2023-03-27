@@ -1,8 +1,13 @@
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styled from 'styled-components';
 export default function MobileNav({ setShowMobileNav }) {
   return (
-    <StyledMobileNav>
+    <StyledMobileNav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.5 } }}
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+    >
       <Link onClick={() => setShowMobileNav(false)} href="/">
         Home
       </Link>
@@ -19,10 +24,10 @@ export default function MobileNav({ setShowMobileNav }) {
   );
 }
 
-const StyledMobileNav = styled.nav`
+const StyledMobileNav = styled(motion.nav)`
   height: 100vh;
   width: 100vw;
-  background: var(--green);
+  background: black;
   position: fixed;
   left: 0;
   top: 0;

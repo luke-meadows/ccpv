@@ -16,8 +16,9 @@ const StyledContactSection = styled.div`
   background: #f9f9f9;
   margin-top: ${(props) => (props.topGap ? '4rem' : '')};
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
+    margin-bottom: 3rem;
   }
   @media only screen and (max-width: 1100px) {
     margin-top: 0;

@@ -27,7 +27,7 @@ const StyledTextSection = styled.div`
     gap: 1.5rem;
   }
   .left {
-    font-weight: 400;
+    font-weight: 500;
     border-right: 1px solid #d7d7d7;
     padding-right: 2.5rem;
     min-width: 25rem;
@@ -35,6 +35,7 @@ const StyledTextSection = styled.div`
   }
   .right {
     padding-left: 2.5rem;
+    font-weight: 300;
   }
   button {
     color: #009288;
