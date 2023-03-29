@@ -13,11 +13,7 @@ export default function Showreel() {
           </div>
         </div>
         <div className="video">
-          <Vimeo video="174620220" volume={0} paused={true} responsive />
-          <span style={{ color: 'red' }}>
-            <br />
-            ** Need the vimeo Id number for actual showreel
-          </span>
+          <Vimeo video="574461698" volume={0} paused={true} responsive />
         </div>
       </StyledShowreel>
     </Container>
