@@ -16,9 +16,9 @@ export default async function handler(req, res) {
   `;
   await resend.emails
     .send({
-      from: 'onboarding@resend.dev',
-      // from: 'info@armstrongbuild.com',
-      to: 'lukemeadows1111@gmail.com',
+      // from: 'onboarding@resend.dev',
+      from: 'cameron.cox@ccpv.co.uk',
+      to: 'cameron.cox1993@hotmail.co.uk',
       subject: 'New Website Enquiry',
       html: html,
     })
