@@ -9,8 +9,7 @@ export default function ContactForm() {
     message: '',
   });
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(inputs) {
     fetch('/api/mail', {
       method: 'post',
       body: JSON.stringify(inputs),
