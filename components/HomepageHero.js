@@ -1,7 +1,7 @@
 import useWindowScroll from '@/lib/useWindowScroll';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Logo from './global/Logo';
 import MobileNav from './global/MobileNav';

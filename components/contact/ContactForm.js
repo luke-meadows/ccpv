@@ -2,35 +2,22 @@ import useForm from '@/lib/useForm';
 import styled from 'styled-components';
 export default function ContactForm() {
   const { inputs, handleChange, clearForm } = useForm({
-    firstName: 'default',
-    lastName: 'default',
-    email: 'default',
-    subject: 'default',
-    message: 'default',
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
-  function submitForm(inputs) {
-    // setButtonStatus({ ...buttonStatus, content: 'Sending', disabled: true });
+  function handleSubmit(e) {
+    e.preventDefault();
     fetch('/api/mail', {
       method: 'post',
       body: JSON.stringify(inputs),
     }).then((res) => {
-      // checkboxRef.current.checked = false;
       if (res.status === 200) {
-        // setButtonStatus({
-        //   content: ButtonIcon('check'),
-        //   className: 'sent-button-bg',
-        //   disabled: true,
-        // });
-        // clearForm();
-        console.log('success');
+        clearForm();
       } else {
-        // setButtonStatus({
-        //   content: ButtonIcon('cancel'),
-        //   className: 'error-button-bg',
-        //   disabled: true,
-        // });
-        console.log('fail', res);
       }
     });
   }
@@ -71,7 +58,7 @@ export default function ContactForm() {
         rows="10"
         placeholder="Leave Your Message Here..."
       ></textarea>
-      <button type="button" onClick={() => submitForm(inputs)}>
+      <button type="button" onClick={() => handleSubmit(inputs)}>
         Send
       </button>
     </StyledContactForm>
@@ -92,6 +79,7 @@ const StyledContactForm = styled.form`
     padding: 0.5rem;
     font-size: 1rem;
     resize: none;
+    color: black;
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: #bbbbbb;

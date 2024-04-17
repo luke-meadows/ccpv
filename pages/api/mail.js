@@ -1,28 +1,37 @@
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
+import { Resend } from 'resend';
+const resend = new Resend(process.env.RESEND_API_KEY);
 export default async function handler(req, res) {
   const body = JSON.parse(req.body);
-
-  const messageText = `
-  Name: ${body.firstName} ${body.lastName}\r\n\
-  Email: ${body.email}\r\n\
-  Message: ${body.message}
+  console.log(body);
+  const html = `
+  <h1>Website Enquiry</h1>
+  <p>
+  <strong>Name</strong>: ${body.firstName} ${body.lastName}
+  </p>
+  <p>
+  <strong>Email</strong>: ${body.email}
+  </p>
+  <p>
+  <strong>Telephone</strong>: ${body.phone || 'No telephone provided'}
+  </p>
+  <p>
+  <strong>Message</strong>: ${body.message}
+  </p>
   `;
-
-  const email = {
-    to: 'lukemeadowsdev@gmail.com',
-    from: 'lukemeadowsdev@gmail.com',
-    subject: body.subject,
-    text: messageText,
-  };
-
-  await sgMail.send(email).then(
-    (success) => {
-      res.status(200).json('success');
-    },
-    (error) => {
-      res.status(500).json('error');
-    }
-  );
+  await resend.emails
+    .send({
+      from: 'onboarding@resend.dev',
+      // from: 'info@armstrongbuild.com',
+      to: 'lukemeadowsdev@gmail.com',
+      subject: 'New Website Enquiry',
+      html: html,
+    })
+    .then(
+      (success) => {
+        res.status(200).json('success');
+      },
+      (error) => {
+        res.status(500).json('error');
+      }
+    );
 }
