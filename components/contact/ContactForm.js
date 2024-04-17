@@ -9,7 +9,7 @@ export default function ContactForm() {
     message: '',
   });
 
-  function handleSubmit(inputs) {
+  function handleSubmit() {
     fetch('/api/mail', {
       method: 'post',
       body: JSON.stringify(inputs),
@@ -17,6 +17,7 @@ export default function ContactForm() {
       if (res.status === 200) {
         clearForm();
       } else {
+        console.log('error');
       }
     });
   }
@@ -57,7 +58,7 @@ export default function ContactForm() {
         rows="10"
         placeholder="Leave Your Message Here..."
       ></textarea>
-      <button type="button" onClick={() => handleSubmit(inputs)}>
+      <button type="button" onClick={() => handleSubmit()}>
         Send
       </button>
     </StyledContactForm>

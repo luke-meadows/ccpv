@@ -6,13 +6,10 @@ export default async function handler(req, res) {
   const html = `
   <h1>Website Enquiry</h1>
   <p>
-  <strong>Name</strong>: ${body.firstName} ${body.lastName}
+  <strong>Name</strong>: ${body.firstName}
   </p>
   <p>
   <strong>Email</strong>: ${body.email}
-  </p>
-  <p>
-  <strong>Telephone</strong>: ${body.phone || 'No telephone provided'}
   </p>
   <p>
   <strong>Message</strong>: ${body.message}
