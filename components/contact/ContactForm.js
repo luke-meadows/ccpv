@@ -2,11 +2,11 @@ import useForm from '@/lib/useForm';
 import styled from 'styled-components';
 export default function ContactForm() {
   const { inputs, handleChange, clearForm } = useForm({
-    firstName: 'default',
-    lastName: 'default',
-    email: 'default',
-    subject: 'default',
-    message: 'default',
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
   function handleSubmit() {
@@ -18,7 +18,6 @@ export default function ContactForm() {
       if (res.status === 200) {
         clearForm();
       } else {
-        console.log('error');
       }
     });
   }
