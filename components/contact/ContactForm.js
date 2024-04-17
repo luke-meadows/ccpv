@@ -10,6 +10,7 @@ export default function ContactForm() {
   });
 
   function handleSubmit() {
+    console.log('submitted');
     fetch('/api/mail', {
       method: 'post',
       body: JSON.stringify(inputs),
