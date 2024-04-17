@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const html = `
   <h1>Website Enquiry</h1>
   <p>
-  <strong>Name</strong>: ${body.firstName}
+  <strong>Name</strong>: ${body.firstName} ${body.lastName}
   </p>
   <p>
   <strong>Email</strong>: ${body.email}
