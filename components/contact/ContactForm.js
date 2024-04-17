@@ -15,8 +15,8 @@ export default function ContactForm() {
       method: 'post',
       body: JSON.stringify(inputs),
     }).then((res) => {
+      clearForm();
       if (res.status === 200) {
-        clearForm();
       } else {
       }
     });
