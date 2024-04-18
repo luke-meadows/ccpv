@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import TextSection from './global/TextSection';
+import Link from 'next/link';
 export default function AboutOurFounder() {
   return (
     <TextSection topGap={true}>
@@ -23,8 +24,9 @@ export default function AboutOurFounder() {
             about creating a company that could concentrate on the emotional and
             empathetic sides of the images he was capturing.
           </p>
-
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>

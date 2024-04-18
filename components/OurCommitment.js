@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import TextSection from './global/TextSection';
+import Link from 'next/link';
 export default function OurCommitment() {
   return (
     <TextSection>
@@ -25,7 +26,9 @@ export default function OurCommitment() {
             product is everything you imagined and more.
           </p>
 
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <button>Get in touch</button>
+          </Link>
         </div>
       </div>
     </TextSection>
