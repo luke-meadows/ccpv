@@ -5,7 +5,6 @@ import ContactSection from '@/components/contact/ContactSection';
 import Footer from '@/components/global/Footer';
 import Head from 'next/head';
 import ServiceCards from '@/components/ServiceCards';
-import CookieConsent from 'react-cookie-consent';
 
 export default function Home() {
   return (
