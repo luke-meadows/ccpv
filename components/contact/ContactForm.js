@@ -14,9 +14,10 @@ export default function ContactForm({ setHeader }) {
       method: 'post',
       body: JSON.stringify(inputs),
     }).then((res) => {
+      clearForm();
+      setHeader('Thank You');
+      console.log(res);
       if (res.status === 200) {
-        setHeader('Thank You');
-        clearForm();
       } else {
       }
     });
