@@ -3,7 +3,7 @@ import TextSection from '../global/TextSection';
 export default function ProductAndExplainersText() {
   return (
     <TextSection topGap={true}>
-      <h3>WEST MIDLANDS MUSIC & LIVE EVENTS VIDEOGRAPHER</h3>
+      <h3>WEST MIDLANDS PRODUCT & EXPLAINER VIDEOGRAPHER</h3>
       <div className="text">
         <div className="left">
           <p className="italic">
@@ -16,20 +16,27 @@ export default function ProductAndExplainersText() {
         </div>
         <div className="right">
           <p>
-            Music and live event videography is something of a speciality of
-            ours. Our founder is passionate about this space, so it seemed only
-            natural to combine our knowledge with the passion and energy that
-            only comes with the vibes of a live audience. We know that any good
-            live event must generate electricity and energy to connect the
-            members of the audience to what they&apos;re seeing first-hand. We
-            work closely with event organisers and venue staff to capture this
-            atmosphere so that anyone watching the footage can experience the
-            same immersion that brought that group of people together at that
-            particular point in time. When it comes to music and live event
-            photography, we utilise a range of specialised, state-of-art
-            equipment to capture everything from the beating heart of a crowd to
-            the seemingly minute moments that would often be missed with a blink
-            of an eye.
+            We live in a fast-paced and ever-expanding world of technological
+            advancements, where products can be delivered right to the front
+            door.
+          </p>
+          <p>
+            However, although it&apos;s never been easier to shop for the best
+            and brightest products online, it can often be difficult for
+            consumers to fully grasp the touch and feel of the product
+            you&apos;re offering - particularly so when your product is
+            especially niche.
+          </p>
+          <p>
+            With our West Midlands product and explainer videography services,
+            we can fully demonstrate your product on film to give your customers
+            a tactile experience that helps them understand how your product
+            works, how it looks and how it can improve their day-to-day life.
+          </p>
+          <p>
+            These days, video is the number one way to consume content online,
+            and we&apos;re able to work with you and your team to show your
+            customers, rather than telling them, what you&apos;re all about.
           </p>
 
           <Link href="/contact">

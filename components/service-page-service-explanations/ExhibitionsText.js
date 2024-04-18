@@ -3,7 +3,7 @@ import TextSection from '../global/TextSection';
 export default function ExhibitionsText() {
   return (
     <TextSection topGap={true}>
-      <h3>WEST MIDLANDS MUSIC & LIVE EVENTS VIDEOGRAPHER</h3>
+      <h3>WEST MIDLANDS EXHIBITION VIDEOGRAPHER</h3>
       <div className="text">
         <div className="left">
           <p className="italic">
@@ -16,20 +16,17 @@ export default function ExhibitionsText() {
         </div>
         <div className="right">
           <p>
-            Music and live event videography is something of a speciality of
-            ours. Our founder is passionate about this space, so it seemed only
-            natural to combine our knowledge with the passion and energy that
-            only comes with the vibes of a live audience. We know that any good
-            live event must generate electricity and energy to connect the
-            members of the audience to what they&apos;re seeing first-hand. We
-            work closely with event organisers and venue staff to capture this
-            atmosphere so that anyone watching the footage can experience the
-            same immersion that brought that group of people together at that
-            particular point in time. When it comes to music and live event
-            photography, we utilise a range of specialised, state-of-art
-            equipment to capture everything from the beating heart of a crowd to
-            the seemingly minute moments that would often be missed with a blink
-            of an eye.
+            Exhibitions and in-person events can often be the very lifeblood of
+            an industry - whether you&apos;re the host or a delegate.
+          </p>
+          <p>
+            These events are often set-piece showcases for new technologies,
+            innovative products and large-scale launches from some of the most
+            well-known brands within a particular industry.
+          </p>
+          <p>
+            Our exhibition videography and photography aim to capture the buzz
+            and excitement of these viewing of a potential industry disruptor.
           </p>
           <Link href="/contact">
             <button>Get in touch</button>

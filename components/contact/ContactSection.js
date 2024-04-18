@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import Container from '../global/Container';
 import ContactForm from './ContactForm';
+import { useState } from 'react';
 export default function ContactSection({ topGap = false }) {
+  const [header, setHeader] = useState('CONTACT US');
   return (
     <StyledContactSection topGap={topGap}>
       <Container>
-        <h2>Contact Us</h2>
-        <ContactForm />
+        <h2>{header}</h2>
+        <ContactForm setHeader={setHeader} />
       </Container>
     </StyledContactSection>
   );

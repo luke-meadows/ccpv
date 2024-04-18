@@ -3,7 +3,7 @@ import TextSection from '../global/TextSection';
 export default function CorporateText() {
   return (
     <TextSection topGap={true}>
-      <h3>WEST MIDLANDS MUSIC & LIVE EVENTS VIDEOGRAPHER</h3>
+      <h3>WEST MIDLANDS CORPORATE VIDEOGRAPHER</h3>
       <div className="text">
         <div className="left">
           <p className="italic">
@@ -16,20 +16,27 @@ export default function CorporateText() {
         </div>
         <div className="right">
           <p>
-            Music and live event videography is something of a speciality of
-            ours. Our founder is passionate about this space, so it seemed only
-            natural to combine our knowledge with the passion and energy that
-            only comes with the vibes of a live audience. We know that any good
-            live event must generate electricity and energy to connect the
-            members of the audience to what they&apos;re seeing first-hand. We
-            work closely with event organisers and venue staff to capture this
-            atmosphere so that anyone watching the footage can experience the
-            same immersion that brought that group of people together at that
-            particular point in time. When it comes to music and live event
-            photography, we utilise a range of specialised, state-of-art
-            equipment to capture everything from the beating heart of a crowd to
-            the seemingly minute moments that would often be missed with a blink
-            of an eye.
+            When it comes to commercial videography and photography, we know
+            that any business or organisation that puts out this kind of content
+            must ensure that it aligns with their brand values and objectives as
+            a business.
+          </p>
+          <p>
+            We&apos;ve worked extensively for corporate clients across numerous
+            sectors, from homeware and hospitality, to sporting events and
+            healthcare, so we know just how crucial it is to work closely with
+            you to ensure that our projects are completely aligned from a
+            business perspective.
+          </p>
+          <p>
+            Before we undertake any corporate video or photography project,
+            we&apos;ll sit down with you and your team, to ensure that everyone
+            is on the same page.
+          </p>
+          <p>
+            This way both sides can feel confident that the finished product
+            will be exactly what your business deserves and is capable of
+            smashing the targets that you&apos;ve set for you and your company.
           </p>
           <Link href="/contact">
             <button>Get in touch</button>

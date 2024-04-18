@@ -196,11 +196,16 @@ const Title = styled.div`
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
   h1 {
     max-width: 16ch;
-    font-size: 2.8rem;
-    font-weight: 600;
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+  }
+  p {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
   }
   /* ipad */
   @media only screen and (max-width: 1100px) {

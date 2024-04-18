@@ -1,7 +1,7 @@
 import useForm from '@/lib/useForm';
 import styled from 'styled-components';
-export default function ContactForm() {
-  const { inputs, handleChange, clearForm } = useForm({
+export default function ContactForm({ setHeader }) {
+  const { inputs, handleChange, clearForm, resetForm } = useForm({
     firstName: '',
     lastName: '',
     email: '',
@@ -10,13 +10,13 @@ export default function ContactForm() {
   });
 
   function handleSubmit() {
-    console.log('submitted');
     fetch('/api/mail', {
       method: 'post',
       body: JSON.stringify(inputs),
     }).then((res) => {
-      clearForm();
       if (res.status === 200) {
+        setHeader('Thank You');
+        clearForm();
       } else {
       }
     });
@@ -26,6 +26,7 @@ export default function ContactForm() {
     <StyledContactForm>
       <input
         onChange={handleChange}
+        value={inputs.email}
         name="email"
         type="text"
         placeholder="Email Address"
@@ -33,12 +34,14 @@ export default function ContactForm() {
       <div className="two-col">
         <input
           onChange={handleChange}
+          value={inputs.firstName}
           name="firstName"
           type="text"
           placeholder="First Name"
         />
         <input
           onChange={handleChange}
+          value={inputs.lastName}
           name="lastName"
           type="text"
           placeholder="Last Name"
@@ -46,12 +49,14 @@ export default function ContactForm() {
       </div>
       <input
         onChange={handleChange}
+        value={inputs.subject}
         name="subject"
         type="text"
         placeholder="Subject"
       />
       <textarea
         onChange={handleChange}
+        value={inputs.message}
         name="message"
         id=""
         cols="30"
