@@ -3,6 +3,7 @@ import Footer from '@/components/global/Footer';
 import HomepageHero from '@/components/HomepageHero';
 import CorporateText from '@/components/service-page-service-explanations/CorporateText';
 import ServiceCards from '@/components/ServiceCards';
+import Head from 'next/head';
 
 export default function Corporate() {
   return (
