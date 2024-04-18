@@ -7,6 +7,9 @@ import ServiceCards from '@/components/ServiceCards';
 export default function Corporate() {
   return (
     <div>
+      <Head>
+        <title>CCPV - Corporate Videography & Photography</title>
+      </Head>
       <HomepageHero
         title="CORPORATE VIDEOGRAPHY & PHOTOGRAPHY"
         subtitle="Working with Startups to Multinational Corporations"

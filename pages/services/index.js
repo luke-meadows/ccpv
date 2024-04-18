@@ -3,10 +3,14 @@ import HomepageHero from '@/components/HomepageHero';
 import PhotographyText from '@/components/service-page-service-explanations/PhotographyText';
 import VideographyText from '@/components/service-page-service-explanations/VideographyText';
 import ServiceCards from '@/components/ServiceCards';
+import Head from 'next/head';
 
 export default function Services() {
   return (
     <div>
+      <Head>
+        <title>CCPV - Services</title>
+      </Head>
       <HomepageHero
         title="OUR SERVICES"
         subtitle="We Capture Your Most Important Moments"
