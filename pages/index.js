@@ -23,7 +23,7 @@ export default function Home() {
       <Showreel />
       <FindOutMoreWho />
       <ContactSection topGap={true} />
-      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText="Accept"
         cookieName="myAwesomeCookieName2"
@@ -50,7 +50,7 @@ export default function Home() {
         }}
       >
         This website uses cookies to enhance the user experience.{' '}
-      </CookieConsent>
+      </CookieConsent> */}
 
       <Footer />
     </>
