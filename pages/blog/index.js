@@ -2,6 +2,7 @@ import HomepageHero from '@/components/HomepageHero';
 import BlogCategorySelection from '@/components/blog/BlogCategorySelection';
 import BlogPosts from '@/components/blog/BlogPosts';
 import ContactSection from '@/components/contact/ContactSection';
+import Footer from '@/components/global/Footer';
 import Head from 'next/head';
 import { useState } from 'react';
 
@@ -21,6 +22,7 @@ export default function Blog() {
       <BlogCategorySelection setCategory={setCategory} category={category} />
       <BlogPosts category={category} />
       <ContactSection />
+      <Footer />
     </div>
   );
 }
