@@ -1,45 +1,26 @@
 import useWindowScroll from '@/lib/useWindowScroll';
 import { AnimatePresence, motion } from 'framer-motion';
-import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
-import Logo from './global/Logo';
-import Header from './global/Header';
-import MobileNav from './global/MobileNav';
-import ContactButton from './hero-buttons/ContactButton';
-import PlayShowreelButton from './hero-buttons/PlayShowreelButton';
-import ServicesNavDropdown from './ServicesNavDropdown';
-export default function HomepageHero({
-  videoUrlCode = 'home',
+import Header from '../global/Header';
+import MobileNav from '../global/MobileNav';
+import ContactButton from '../hero-buttons/ContactButton';
+import PlayShowreelButton from '../hero-buttons/PlayShowreelButton';
+import Image from 'next/image';
+export default function BlogHero({
   title,
-  subtitle,
+  category,
+  image,
   button = 'contact',
 }) {
   const [servicesHovered, setServicesHovered] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const scrollPosition = useWindowScroll();
-
-  const videoUrlCodes = {
-    home: '807653156',
-    sports: '807638507',
-    product: '807638428',
-    corporate: '807638151',
-    music: '807638356',
-    liveEvent: '807638296',
-    exhibition: '807638221',
-    wedding: '807638575',
-  };
-
+  console.log(image);
   return (
-    <StyledHero videoUrlCode={videoUrlCode}>
-      <div className="vimeo-wrapper">
-        <iframe
-          src={`https://player.vimeo.com/video/${videoUrlCodes[videoUrlCode]}?background=1&autoplay=1&loop=1&byline=0&title=0muted=1`}
-          frameborder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
-        ></iframe>
+    <StyledHero>
+      <div className="image-wrapper">
+        <Image src={image} fill alt="blog img" />
       </div>
       <Header
         servicesHovered={servicesHovered}
@@ -50,7 +31,7 @@ export default function HomepageHero({
       />
       <Title>
         <h1>{title}</h1>
-        <p>{subtitle}</p>
+        <p>Topic: {category}</p>
         {button === 'showreel' && <PlayShowreelButton />}
         {button === 'contact' && <ContactButton />}
       </Title>
@@ -68,31 +49,19 @@ export default function HomepageHero({
 }
 
 const StyledHero = styled.div`
-  height: 100vh;
+  height: 30rem;
   width: 100vw;
   position: relative;
   color: white;
   overflow: hidden;
-  .vimeo-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .vimeo-wrapper > iframe {
-    width: 100%;
-    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-    min-height: 100vh;
-    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-    position: absolute;
-    top: 50%;
-    left: ${(props) => (props.videoUrlCode === 'home' ? '65%' : '60%')};
-    transform: translate(-50%, -50%);
-    scale: ${(props) => (props.videoUrlCode === 'home' ? '1.5' : '1.1')};
+  .image-wrapper {
+    position: relative;
+    height: 30rem;
+    width: 100vw;
+
+    img {
+      object-fit: cover;
+    }
   }
   .overlay {
     height: 100vh;
@@ -112,11 +81,11 @@ const Title = styled.div`
   top: 50%;
   left: 8rem;
   z-index: 2;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   display: flex;
   flex-direction: column;
   h1 {
-    max-width: 16ch;
+    max-width: 20ch;
     font-size: 3.5rem;
     font-weight: 700;
 

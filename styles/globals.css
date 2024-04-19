@@ -139,6 +139,22 @@ button:hover {
   color: white;
   background: #009288;
 }
+.button-reverse2 {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  background: none;
+  outline: none;
+  font-weight: 100;
+  font-size: 0.8rem;
+  color: #009288;
+  border: 1px solid #009288;
+  cursor: pointer;
+}
+.button-reverse2:hover {
+  color: white;
+  background: #009288;
+}
 button {
   cursor: pointer;
 }
