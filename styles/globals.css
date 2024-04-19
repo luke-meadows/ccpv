@@ -186,3 +186,9 @@ i:hover {
   min-width: 100vw;
   padding: 4rem;
 }
+
+@media only screen and (max-width: 800px) {
+  .hide-on-smallscreen {
+    display: none;
+  }
+}

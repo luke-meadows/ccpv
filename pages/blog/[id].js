@@ -39,7 +39,9 @@ export default function BlogPage() {
             </p>
           </div>
           <Link href="/blog">
-            <button className="button-reverse2">Back to blog posts</button>
+            <button className="button-reverse2 hide-on-smallscreen">
+              Back to blog posts
+            </button>
           </Link>
         </div>
         <br />
@@ -116,8 +118,9 @@ const StyledBlogPage = styled.main`
     align-items: center;
     gap: 1rem;
     .avatar {
-      height: 4rem;
-      width: 4rem;
+      height: 3rem;
+      width: 3rem;
+      aspect-ratio: 1;
       position: relative;
       overflow: hidden;
     }
