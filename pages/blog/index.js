@@ -3,8 +3,10 @@ import BlogCategorySelection from '@/components/blog/BlogCategorySelection';
 import BlogPosts from '@/components/blog/BlogPosts';
 import ContactSection from '@/components/contact/ContactSection';
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function Blog() {
+  const [category, setCategory] = useState('all');
   return (
     <div>
       <Head>
@@ -16,8 +18,8 @@ export default function Blog() {
         videoUrlCode="home"
         button="contact"
       />
-      <BlogCategorySelection />
-      <BlogPosts />
+      <BlogCategorySelection setCategory={setCategory} category={category} />
+      <BlogPosts category={category} />
       <ContactSection />
     </div>
   );
