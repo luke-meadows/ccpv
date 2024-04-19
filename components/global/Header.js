@@ -24,7 +24,7 @@ export default function Header({
           <Link href="/services">Services</Link>
           {servicesHovered && <ServicesNavDropdown />}
         </div>
-        <Link href="/blog">Blog</Link>
+        {/* <Link href="/blog">Blog</Link> */}
         <Link href="/contact">Contact Us</Link>
       </nav>
       <motion.div
