@@ -91,7 +91,7 @@ const StyledHeader = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    position: fixed;
+    /* position: fixed; */
     padding: 0rem 1rem;
     height: 5rem;
     background: ${(props) => (props.scrollPosition > 10 ? 'black' : '')};
