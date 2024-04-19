@@ -10,6 +10,7 @@ import ContactSection from '@/components/contact/ContactSection';
 import BlogBannerImage from '@/components/blog/BlogBannerImage';
 import Link from 'next/link';
 import Head from 'next/head';
+import Footer from '@/components/global/Footer';
 export default function BlogPage() {
   const [blog, setBlog] = useState({});
   const router = useRouter();
@@ -104,6 +105,7 @@ export default function BlogPage() {
         </p>
       </Container>
       <ContactSection />
+      <Footer />
     </StyledBlogPage>
   );
 }
