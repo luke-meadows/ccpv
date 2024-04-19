@@ -14,7 +14,7 @@ export default function Blog() {
       </Head>
       <HomepageHero
         title="BLOG"
-        subtitle="Insights from the Videography and Photography Industry"
+        subtitle="Media Industry Insights"
         videoUrlCode="home"
         button="contact"
       />
