@@ -98,6 +98,7 @@ const Title = styled.div`
   /* ipad */
   @media only screen and (max-width: 1100px) {
     left: 4rem;
+    right: 4rem;
   }
   /* phone */
   @media only screen and (max-width: 600px) {
